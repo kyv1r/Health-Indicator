@@ -9,9 +9,9 @@ public class HealthSmoothSlider : HealthValueView
     private Coroutine _coroutine;
     private float durationChangeHealth = 0.09f;
 
-    protected override void Awake()
+    private void Awake()
     {
-        base.Awake();
+        Init();
         _slider = GetComponent<Slider>();
         _slider.value = HealthValue;
     }

@@ -6,9 +6,9 @@ public class HealthSliderView : HealthValueView
 {
     private Slider _slider;
 
-    protected override void Awake()
+    private void Awake()
     {
-        base.Awake();
+        Init();
         _slider = GetComponent<Slider>();
         _slider.value = HealthValue;
     }

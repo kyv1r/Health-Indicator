@@ -4,9 +4,9 @@ public class HealthTextView : HealthValueView
 {
     private TextMeshProUGUI _healthText;
 
-    protected override void Awake()
+    private void Awake()
     {
-        base.Awake();
+        Init();
         _healthText = GetComponent<TextMeshProUGUI>();
         _healthText.text = $"{MaxHealthValue}/{HealthValue}";
     }

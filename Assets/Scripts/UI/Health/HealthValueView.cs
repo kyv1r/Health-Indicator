@@ -2,25 +2,31 @@ using UnityEngine;
 
 public class HealthValueView : MonoBehaviour
 {
-    [SerializeField] protected HealthSystem HealthSystem;
+    [SerializeField] protected Health Health;
 
     public float HealthValue {  get; private set; } 
     protected float MaxHealthValue { get; private set; }
 
-    protected virtual void Awake()
+    private void Awake()
     {
-        HealthValue = HealthSystem.CurrentValue;
-        MaxHealthValue = HealthSystem.MaxValue;
+        HealthValue = Health.CurrentValue;
+        MaxHealthValue = Health.MaxValue;
+    }
+
+    protected void Init()
+    {
+        HealthValue = Health.CurrentValue;
+        MaxHealthValue = Health.MaxValue;
     }
 
     private void OnEnable()
     {
-        HealthSystem.HealthChanged += SetCurrentHealthValue;
+        Health.HealthChanged += SetCurrentHealthValue;
     }
 
     private void OnDisable()
     {
-        HealthSystem.HealthChanged -= SetCurrentHealthValue;
+        Health.HealthChanged -= SetCurrentHealthValue;
     }
 
     protected virtual void SetCurrentHealthValue(float healthValue)

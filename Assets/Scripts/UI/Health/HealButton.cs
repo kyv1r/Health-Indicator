@@ -4,7 +4,7 @@ using UnityEngine.UI;
 [RequireComponent(typeof(Button))]
 public class HealButton : MonoBehaviour
 {
-    [SerializeField] private HealthSystem _healthSystem;
+    [SerializeField] private Health _healthSystem;
 
     private float _healValue = 5;
     private Button _button;

@@ -4,7 +4,7 @@ using UnityEngine.UI;
 [RequireComponent(typeof(Button))]
 public class TakeDamageButton : MonoBehaviour
 {
-    [SerializeField] private HealthSystem _healthSystem;
+    [SerializeField] private Health _healthSystem;
 
     private float _damageValue = 5;
     private Button _button;
