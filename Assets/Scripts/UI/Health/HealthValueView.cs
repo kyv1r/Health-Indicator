@@ -7,13 +7,7 @@ public class HealthValueView : MonoBehaviour
     public float HealthValue {  get; private set; } 
     protected float MaxHealthValue { get; private set; }
 
-    private void Awake()
-    {
-        HealthValue = Health.CurrentValue;
-        MaxHealthValue = Health.MaxValue;
-    }
-
-    protected void Init()
+    protected virtual void Init()
     {
         HealthValue = Health.CurrentValue;
         MaxHealthValue = Health.MaxValue;

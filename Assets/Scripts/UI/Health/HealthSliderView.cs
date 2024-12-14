@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -8,8 +9,13 @@ public class HealthSliderView : HealthValueView
 
     private void Awake()
     {
-        Init();
         _slider = GetComponent<Slider>();
+        Init();
+    }
+
+    protected override void Init()
+    {
+        base.Init();
         _slider.value = HealthValue;
     }
 

@@ -6,8 +6,13 @@ public class HealthTextView : HealthValueView
 
     private void Awake()
     {
-        Init();
         _healthText = GetComponent<TextMeshProUGUI>();
+        Init();
+    }
+
+    protected override void Init()
+    {
+        base.Init();
         _healthText.text = $"{MaxHealthValue}/{HealthValue}";
     }
 
